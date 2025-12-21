@@ -5,7 +5,7 @@ export default function Topbar({ title, user }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
-    window.open("https://lgtslynx-production.up.railway.app/auth/logout", "_self");
+    window.open("http://localhost:5000/auth/logout", "_self");
   };
 
   return (

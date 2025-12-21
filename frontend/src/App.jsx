@@ -15,13 +15,13 @@ export default function App() {
   const location = useLocation();
 
   const handleGoogleRedirect = () => {
-    window.location.href = "https://lgtslynx-production.up.railway.app/auth/google";
+    window.location.href = "http://localhost:5000/auth/google";
   };
 
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await fetch("https://lgtslynx-production.up.railway.app/auth/user", {
+        const response = await fetch("http://localhost:5000/auth/user", {
           method: "GET",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           credentials: "include",
