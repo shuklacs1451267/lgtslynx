@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { FaBell, FaSearch, FaSignOutAlt, FaUser } from "react-icons/fa";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function Topbar({ title, user }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open(`${API_BASE}/auth/logout`, "_self");
   };
 
   return (

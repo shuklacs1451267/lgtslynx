@@ -10,11 +10,11 @@ const { errorHandler } = require("./src/middlewares/error.middleware");
 
 const app = express();
 
-app.set("trust proxy", 1); 
+app.set("trust proxy", 1);
 
 app.use(
   cors({
-    origin: "http://localhost:5173", 
+    origin: ["http://localhost:5173", "https://frontend-production-4e2f.up.railway.app/"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -28,9 +28,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-      secure: false,
-      sameSite: 'lax', 
-      maxAge: 24 * 60 * 60 * 1000
+    secure: false,
+    sameSite: 'lax',
+    maxAge: 24 * 60 * 60 * 1000
   }
 }));
 
@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ status: "OK" });
 });
 
-app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/indexing", indexingRoutes);
 app.use("/api/content", contentRoutes)
 

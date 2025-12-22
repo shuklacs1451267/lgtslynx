@@ -4,6 +4,7 @@ import LandingPage from "./landing/LandingPage";
 import SEOPlatform from "./dashboard/SEOPlatform";
 import AuthModal from "./dashboard/login/AuthModal";
 import { Toaster } from 'react-hot-toast';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,13 +16,13 @@ export default function App() {
   const location = useLocation();
 
   const handleGoogleRedirect = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    window.location.href = `${API_BASE}/auth/google`;
   };
 
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/auth/user", {
+        const response = await fetch(`${API_BASE}/auth/user`, {
           method: "GET",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           credentials: "include",
