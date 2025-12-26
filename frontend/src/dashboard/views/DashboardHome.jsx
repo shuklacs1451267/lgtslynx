@@ -121,7 +121,7 @@ export default function DashboardHome() {
                     <p className="text-[10px] font-black uppercase tracking-widest opacity-80">Available Node Credits</p>
                     <h2 className="text-4xl font-black mt-1 tracking-tighter">{statsData.credits?.toLocaleString()}</h2>
                 </div>
-                <Link to="/billing" className="w-full py-2.5 bg-white/20 hover:bg-white/30 rounded-xl text-[10px] font-black uppercase tracking-widest text-center transition-all">Refill Balance</Link>
+                <Link to="/indexing" className="w-full py-2.5 bg-white/20 hover:bg-white/30 rounded-xl text-[10px] font-black uppercase tracking-widest text-center transition-all">Refill Balance</Link>
             </Card>
 
             <Card className="flex-1 p-6 bg-slate-900 border-0 shadow-2xl relative overflow-hidden flex flex-col justify-between">
@@ -137,7 +137,7 @@ export default function DashboardHome() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 h-28">
         <SmallStatBox label="Success Signals" value={statsData.totalIndexed} icon={<FaCheckCircle/>} color="text-green-500" tag="STABLE" />
         <SmallStatBox label="Active Queue" value={statsData.pending} icon={<FaClock/>} color="text-amber-500" tag="ACTIVE" />
         <SmallStatBox label="Dropped Signals" value={statsData.failed || 0} icon={<FaExclamationTriangle/>} color="text-red-500" tag="ERROR" />
@@ -145,7 +145,7 @@ export default function DashboardHome() {
       </div>
 
       {/* Bottom Logs with View All Button */}
-      <Card className="p-0 overflow-hidden border-slate-200 shadow-sm flex flex-col h-[400px]">
+      <Card className="p-0 overflow-hidden border-slate-200 shadow-sm flex flex-col h-[300px]">
           <div className="px-6 py-4 border-b bg-slate-50/50 flex justify-between items-center shrink-0">
               <h3 className="font-black text-slate-800 text-[11px] uppercase tracking-widest flex items-center gap-2">
                   <FaHistory className="text-slate-400" /> Real-Time Signal Logs
