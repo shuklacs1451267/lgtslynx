@@ -9,7 +9,6 @@ const API_BASE = import.meta.env.VITE_API_URL;
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  // 1. User State Banao
   const [user, setUser] = useState(null);
 
   const navigate = useNavigate();

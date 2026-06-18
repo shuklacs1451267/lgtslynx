@@ -14,7 +14,6 @@ export default function SerpPreviewTool() {
   const TITLE_LIMIT = 60;
   const DESC_LIMIT = 160;
 
-  // Helper functions for colors
   const getLengthColor = (len, limit) => {
     if (len === 0) return "bg-slate-200";
     if (len > limit) return "bg-red-500";
